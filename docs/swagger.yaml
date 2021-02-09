@@ -1,0 +1,41 @@
+definitions:
+  entities.Product:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      price:
+        type: number
+      quantity:
+        type: integer
+      status:
+        type: boolean
+    type: object
+host: localhost:90/Tienda
+info:
+  contact:
+    email: cruzdelacruz026@gmail.com
+    name: Juan Carlos
+    url: miweb.com
+  description: API de productos
+  title: Empleados API
+  version: "1.0"
+paths:
+  /Tienda/findAll:
+    get:
+      consumes:
+      - application/json
+      description: findAll
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entities.Product'
+            type: array
+      tags:
+      - product
+swagger: "2.0"
